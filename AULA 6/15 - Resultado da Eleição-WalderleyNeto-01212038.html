@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Eleição</title>
+</head>
+
+<body>
+    <h1>Resultado da Eleição</h1>
+    <h3>Quantidade de votos que o Naruto teve na eleição:</h3>
+    <input id="naruto_votos" type="text" placeholder="Quantidade de votos">
+    <h3>Quantidade de votos que o Sasuke teve na eleição:</h3>
+    <input id="sasuke_votos" type="text" placeholder="Quantidade de votos">
+    <h3>Quantidade de votos em branco na eleição:</h3>
+    <input id="branco_votos" type="text" placeholder="Votos em branco">
+    <h3>Quantidade de votos nulos na eleição:</h3>
+    <input id="nulo_votos" type="text" placeholder="Votos nulos">
+
+    <p><button onclick="resul_elei()" style="background-color: darkkhaki;">Resultado da Eleição</button></p>
+
+    <div id="div_elei"></div>
+
+</body>
+
+</html>
+
+<script>
+    function resul_elei() {
+        var tot_vot = Number(naruto_votos.value) + Number(sasuke_votos.value) + Number(branco_votos.value) + Number(nulo_votos.value);
+        var naruto = naruto_votos.value * 100 / tot_vot;
+        var sasuke = sasuke_votos.value * 100 / tot_vot;
+        var invalidos = Number(branco_votos.value) + Number(nulo_votos.value) * 100 / tot_vot;
+        var invalidos_qtd = Number(branco_votos.value) + Number(nulo_votos.value);
+        div_elei.innerHTML += `<h3>
+    <p> Total de votos: ${tot_vot} </p>
+    Naruto: ${naruto}% (${naruto_votos.value} votos)
+    <div style="background-color: rgb(255, 127, 80); height: 20px; width: ${naruto}% ;"></div><br>
+    Sasuke:${sasuke}% (${sasuke_votos.value} votos)
+    <div style="background-color: rgb(255, 127, 80); height: 20px; width: ${sasuke}% ;"></div><br>
+    Inválidos: ${invalidos}% (${invalidos_qtd} votos)
+    <div style="background-color: rgb(255, 127, 80); height: 20px; width: ${invalidos}% ;"></div></h3>`
+    ;
+
+    }
+
+</script>

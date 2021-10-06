@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista B - Input e Cálculos</title>
+</head>
+
+<body>
+    <h1>Cidade natal e ano</h1>
+
+    <h3>Cidade <b>natal:</b></h3>
+    <input id="cid_natal" type="text" placeholder="Cidade Natal">
+    <h3>Ano de<b> nascimento</b></h3>
+    <input id="ano_nasc" type="text" placeholder="Ano de nascimento">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="cid_nat">
+    </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        cid_nat.innerHTML += `<br>você nasceu na cidade <b> ${cid_natal.value} </b> no ano de <u> ${ano_nasc.value} </u>`;
+    }
+
+</script>

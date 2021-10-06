@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura dos candidatos</title>
+</head>
+
+<body>
+    <h1>Altura dos candidatos</h1>
+    <br>
+    <div id="ipt_altura">
+        <h3>Altura desejada para os próximos pilotos:</h3>
+        Altura inicial dos pilotos: <input type="text" id="altura_piloto_ini"
+            placeholder="Altura inicial dos pilotos"><br>
+        Altura final dos pilotos: <input type="text" id="altura_piloto_fin" placeholder="Altura final dos pilotos">
+        <br><br>
+        <h3>Altura desejada para os próximos jogadores de basquete:</h3>
+        Altura inicial dos jogadores: <input type="text" id="altura_basquete_ini"
+            placeholder="Altura inicial dos jogadores"><br>
+        Altura final dos jogadores :<input type="text" id="altura_basquete_fin"
+            placeholder="Altura final dos jogadores">
+        <br><br>
+        <button onclick="selecionar()">Selecionar</button>
+    </div>
+    <br><br>
+
+    <div id="informacao" style="display: none;">
+        <span id="altura_in_fin"></span>
+        <br>
+        <h3>Nome e altura</h3><br>
+        Nome: <input type="text" id="nome" placeholder="Nome do candidato"><br>
+        Altura: <input type="text" id="altura" placeholder="Altura do candidato">
+        <br><br>
+
+        <select name="" id="id_modalidade" onchange="modalidade()">
+            <option value="escolher">-- Escolha modalidade --</option>
+            <option value="piloto">Piloto</option>
+            <option value="jogador">Jogador de basquete</option>
+        </select>
+        <br><br>
+        <span id="resposta_candidato"></span>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function selecionar() {
+        if (altura_piloto_ini.value >= 1 && altura_piloto_fin.value > altura_piloto_ini.value && altura_basquete_ini.value >= 1.5 && altura_basquete_fin.value > altura_basquete_ini.value) {
+            ipt_altura.style.display = 'none';
+            informacao.style.display = 'block';
+            altura_in_fin.innerHTML = `<b><h3> Processo de Seleção de novos atletas <br>
+
+           Critério de Seleção de piloto – altura entre ${altura_piloto_ini.value} até ${altura_piloto_fin.value}<br>
+
+           Critério de Seleção de jogador de basquete – altura entre ${altura_basquete_ini.value} até ${altura_basquete_fin.value}</h3></b>`;
+        }
+        else {
+            alert('NÃO SEGUIR EM FRENTE');
+        }
+
+    }
+    function modalidade() {
+        if (id_modalidade.value == 'escolher') {
+            resposta_candidato.innerHTML = '';
+        }
+        if (id_modalidade.value == 'piloto' && altura.value >= altura_piloto_ini.value && altura_piloto_fin.value > altura_piloto_ini.value) {
+            resposta_candidato.innerHTML = `<h3>O candidato ${nome.value} com altura de ${altura.value} participará do processo de seleção de piloto</h3>`;
+        } else {
+            resposta_candidato.innerHTML = `<h3>Infelizmente o candidato ${nome.value} com altura de ${altura.value} não atende os requisitos</h3>`;
+        }
+        if (id_modalidade.value == 'jogador' && altura.value >= altura_basquete_ini.value && altura_basquete_fin.value > altura_basquete_ini.value) {
+            resposta_candidato.innerHTML = `<h3>O candidato ${nome.value} com altura de ${altura.value} participará do processo de seleção para jogador
+                </h3>`;
+        } else {
+            resposta_candidato.innerHTML = `<h3>Infelizmente o candidato ${nome.value} com altura de ${altura.value} não atende os requisitos</h3>`;
+        }
+    }
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador E</title>
+</head>
+
+<body>
+
+    <h2>Média e frequência dos alunos bandtec</h2>
+    <br><br>
+    <input type="text" id="media" placeholder="Média do aluno">
+    <br><br>
+    <input type="text" id="frequencia" placeholder="Frequência do aluno">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+
+</body>
+
+</html>
+<script>
+    function verificar() {
+        var ax_media = media.value;
+        var ax_frequencia = frequencia.value;
+
+        // Poderia fazer sem variáveis  if (media.value >= 6 && frequencia.value >= 75)
+        if (ax_media >= 6 && ax_frequencia >= 75) {
+            alert("APROVADO!!!");
+        } else {
+            alert("REPROVADO!!");
+        }
+    }
+
+</script>

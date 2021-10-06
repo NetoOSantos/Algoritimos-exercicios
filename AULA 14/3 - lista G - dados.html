@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado</title>
+</head>
+
+<body>
+    <h2>Sortear dado</h2>
+    <br>
+    <button onclick="sortear()">Sortear</button>
+    <br><br>
+    <img id="resposta" src="" alt="" style="height: 150px;">
+    <br>
+
+</body>
+</html>
+<script>
+
+function sortear() {
+
+    var random = Math.random() * 6;
+    random = random.toFixed();
+
+    if (random == 1) {
+        resposta.src = `https://dado.online/dado1.png`;
+    }
+    else if (random == 2) {
+        resposta.src = `https://dado.online/dado2.png`;
+    }
+    else if (random == 3) {
+        resposta.src = `https://dado.online/dado3.png`;
+    }
+    else if (random == 4) {
+        resposta.src = `https://dado.online/dado4.png`;
+    }
+    else if (random == 5) {
+        resposta.src = `https://i.pinimg.com/736x/ba/fb/de/bafbde3d7a83bdeb3972d87b40ad1aae.jpg`;
+    } else {
+        resposta.src = `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe0Pq9y79GnDBpHdI5KoeOM3w1l5_vnB4LQR1CpgJfkonqbFhAii1zvrTvuk0VqNueyvw&usqp=CAU`;
+    }
+}
+
+</script>

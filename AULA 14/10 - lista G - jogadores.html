@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores</title>
+</head>
+
+<body>
+    <h2>Jogadores</h2>
+    <br>
+    Jogador 1 jogar dadinho:
+    <button onclick="jogador_1()">jogar</button>
+    <br>
+    <div id="resposta_1"></div>
+    <br><br>
+    Jogador 2 jogar dadinho:
+    <button onclick="jogador_2()">jogar</button>
+    <br>
+    <div id="resposta_2"></div>
+    <br><br>
+    <div id="vencedor"></div>
+</body>
+
+</html>
+<script>
+    var random_1 = Math.random() * 5 + 1;
+    random_1 = random_1.toFixed();
+
+    var random_2 = Math.random() * 5 + 1;
+    random_2 = random_2.toFixed();
+
+    function jogador_1() {
+        resposta_1.innerHTML = `${random_1}`;
+    }
+    
+    function jogador_2() {
+        resposta_2.innerHTML = `${random_2}`;
+
+        if (random_1 > random_2) {
+            vencedor.innerHTML = `Jogador 1 venceu!!!`;
+        }
+        else if (random_2 > random_1) {
+            vencedor.innerHTML = `jogador 2 venceu!!`;
+        }
+        else {
+            vencedor.innerHTML = `Empate!!`;
+        }
+    }
+
+</script>

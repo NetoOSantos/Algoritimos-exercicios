@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevador</title>
+</head>
+<body>
+     <p><h1>Controle no elevador</h1></p>
+
+     <h3>Quantidade de homens que entraram no elevador</h3><br>
+     <input id="peso_men" type="text" placeholder="homens no elevador"><br><br>
+
+     <h3>Quantidade de mulheres que entraram no elevador</h3><br>
+     <input id="peso_woman" type="text" placeholder="Mulheres no elevador"><br><br>
+
+     <button onclick="ana_peso()">Analisar peso</button> <br><br>
+
+     <div id="mensagem"></div>
+     
+</body>
+</html>
+
+<script>
+function ana_peso() {
+    var peso_homens = peso_men.value * 80;
+    var peso_mulher = peso_woman.value * 60;
+    var peso_tot = Number(peso_homens) + Number(peso_mulher);
+
+    mensagem.innerHTML = `Este elevador suporta 800Kg e o peso estimado desta lotação é de ${peso_tot} kg`;
+
+    if (peso_tot > 800) {
+        mensagem.innerHTML += '<span style="color: blue;"><p>Será necessário descer alguém para que o elevador se movimente</p></span>';
+    }
+}
+
+</script>

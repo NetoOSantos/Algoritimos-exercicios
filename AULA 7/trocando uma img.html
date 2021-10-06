@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+</head>
+
+<body>
+    <p>
+    <h1>Carrinho de compras</h1>
+    </p>
+    <div id="car_compras">
+        <h3>Nome do produto:</h3>
+        <input id="nome_prod" type="text" placeholder="Nome do produto:"><br>
+
+        <h3>Quantidade do produto:</h3>
+        <input id="qtd_prod" type="text" placeholder="Quantidade do produto:"><br>
+
+        <h3>Valor do produto:</h3>
+        <input id="valor_prod" type="text" placeholder="Valor do produto:"> <br><br>
+
+        <img src="https://d2r9epyceweg5n.cloudfront.net/stores/254/159/products/carrinho-super-premium-130lts1-31340e3fb72017941f15575136205553-1024-1024.png"
+            alt="" onclick="carrinho_compra()" style="width: 150px;"><br><br>
+
+    </div>
+    <div id="comp_mais">
+        <button id="comprar_mais" onclick="compra_mais()" style="display: none;">Comprar mais</button>
+        <button id="finalizar" onclick="finalizar()">Finalizar</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    function carrinho_compa() {
+        var valor_total = qtd_prod.value * valor_prod.value;
+
+        car_compas.innerHTML += `O orçamento da quantidade ${qts_prod.value} do produto ${nome_prod.value} é de R$${valor_total}`;
+        car_compas.style.display = 'none';
+    }
+
+</script>

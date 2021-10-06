@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos CNH</title>
+</head>
+
+<body>
+    <H2>Pontos na CNH</H2>
+
+    <input id="ipt_qtde_pontos" type="text" placeholder="Quantidade de pontos">
+    <button onclick="validar()">Validar CNH</button> <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        var ax_tot_multa = 0;
+
+        if (ipt_qtde_pontos.value >= 20) {
+            alert('Você está com a CNH suspensa');
+            ax_tot_multa = ipt_qtde_pontos.value * 87;
+        } else {
+            ax_tot_multa = ipt_qtde_pontos.value * 78;
+        }
+
+        resposta.innerHTML = `O Valor total das multas é de R$${ax_tot_multa.toFixed(2)}`;
+
+    }
+
+</script>

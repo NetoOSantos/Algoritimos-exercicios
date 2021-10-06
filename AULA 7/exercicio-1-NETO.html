@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista C</title>
+</head>
+
+<body>
+    <div id="div_compras" style="display: block;">
+        Nome do produto: <input id="nome_produto" type="text" placeholder=""> <br>
+        Quantidade do produto: <input id="qtd_produto" type="text" placeholder=""> <br>
+        Valor do produto: <input id="valor_produto" type="text" placeholder=""> <br>
+
+        <img id="carrinho" onclick="carro_comp()"
+            src="https://images.tcdn.com.br/img/img_prod/687849/carrinho_de_compras_premium_160_litros_amapa_2275_1_20190529144434.jpg"
+            alt="" style="height: 250px;">
+
+    </div>
+    <div id="div_comp_fin" style="display: none;">
+        <button onclick="comprar_mais()"> Comprar MAIS </button> <br><br>
+        <button onclick="finalizar()"> Finalizar </button> <br><br>
+    </div>
+    <span id="primeira_resposta"></span>
+
+
+</body>
+
+
+<script>
+
+    var qtd_total = 0;
+    var soma_total = 0;
+
+    function carro_comp() {
+        qtd_total += Number(qtd_produto.value);
+        soma_total + Number(valor_produto.value);
+
+        div_compras.style.display = 'none';
+        div_comp_fin.style.display = 'block';
+        primeira_resposta.innerHTML += `<h4>O orçamento da quantidade ${qtd_produto.value} do produto ${nome_produto.value} é de R$ ${valor_produto.value * qtd_produto.value}</h4>`;
+
+    }
+    function comprar_mais() {
+        div_comp_fin.style.display = 'none';
+        div_compras.style.display = 'block';
+        primeira_resposta.style, display = 'none';
+    }
+    function finalizar() {
+        alert(`A quantidade de intens orçados foi de ${qtd_total.toFixed(0)} e a soma desses orçamentos foi de R$ ${soma_total}`);
+    }
+</script>
+
+</html>

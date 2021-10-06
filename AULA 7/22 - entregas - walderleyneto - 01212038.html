@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span id="span_ent">
+        Entregas para Zona Sul <input id="ent_zs" type="text" placeholder=""> <br> <br>
+        Entregas para Zona Norte <input id="ent_zn" type="text" placeholder=""> <br> <br>
+        Entregas para Zona Leste <input id="ent_zl" type="text" placeholder=""> <br> <br>
+        Entregas para Zona Oeste <input id="ent_zo" type="text" placeholder=""> <br> <br>
+
+        <button onclick="agenda()">Carregar agenda</button>
+    </span>
+
+    <div id="div_entregas"></div>
+
+    <span id="span_entregar" style="display: none;">
+
+        <button onclick="entregar_zl()">Entregar ZL</button>
+        <button onclick="entregar_zs()">Entregar ZS</button>
+        <button onclick="entregar_zn()">Entregar ZN</button>
+        <button onclick="entregar_zo()">Entregar ZO</button>
+
+    </span>
+
+
+</body>
+<script>
+    var entregas_zl = Number(0);
+    var entregas_zs = Number(0);
+    var entregas_zn = Number(0);
+    var entregas_zo = Number(0);
+    var entregas_rest = Number(0);
+
+    function agenda() {
+
+        entregas_zl = Number(ent_zl.value);
+        entregas_zs = Number(ent_zs.value);
+        entregas_zn = Number(ent_zn.value);
+        entregas_zo = Number(ent_zo.value);
+        entregas_rest = entregas_zl + entregas_zs + entregas_zn + entregas_zo;
+
+        span_ent.style.display = 'none';
+        div_entregas.innerHTML = `
+        Entregas ZL: ${entregas_zl} <br>
+        Entregas ZS: ${entregas_zs} <br>
+        Entregas ZN: ${entregas_zn} <br>
+        Entregas ZO: ${entregas_zo} <br>
+        Entregas restantes: ${entregas_rest}`;
+        span_entregar.style.display = 'block';
+
+    }
+
+    function entregar_zl() {
+
+        entregas_zl--;
+        entregas_rest--;
+
+        span_ent.style.display = 'none';
+        div_entregas.innerHTML = `
+        Entregas ZL: ${entregas_zl} <br>
+        Entregas ZS: ${entregas_zs} <br>
+        Entregas ZN: ${entregas_zn} <br>
+        Entregas ZO: ${entregas_zo} <br>
+        Entregas restantes: ${entregas_rest}`;
+        span_entregar.style.display = 'block';
+
+    }
+
+    function entregar_zs() {
+
+        entregas_zs--;
+        entregas_rest--;
+
+        span_ent.style.display = 'none';
+        div_entregas.innerHTML = `
+        Entregas ZL: ${entregas_zl} <br>
+        Entregas ZS: ${entregas_zs} <br>
+        Entregas ZN: ${entregas_zn} <br>
+        Entregas ZO: ${entregas_zo} <br>
+        Entregas restantes: ${entregas_rest}`;
+        span_entregar.style.display = 'block';
+
+    }
+
+    function entregar_zn() {
+
+        entregas_zn--;
+        entregas_rest--;
+
+        span_ent.style.display = 'none';
+        div_entregas.innerHTML = `
+        Entregas ZL: ${entregas_zl} <br>
+        Entregas ZS: ${entregas_zs} <br>
+        Entregas ZN: ${entregas_zn} <br>
+        Entregas ZO: ${entregas_zo} <br>
+        Entregas restantes: ${entregas_rest}`;
+        span_entregar.style.display = 'block';
+
+    }
+
+    function entregar_zo() {
+        
+        entregas_zo--;
+        entregas_rest--;
+
+        span_ent.style.display = 'none';
+        div_entregas.innerHTML = `
+        Entregas ZL: ${entregas_zl} <br>
+        Entregas ZS: ${entregas_zs} <br>
+        Entregas ZN: ${entregas_zn} <br>
+        Entregas ZO: ${entregas_zo} <br>
+        Entregas restantes: ${entregas_rest}`;
+        span_entregar.style.display = 'block';
+
+    }
+
+
+</script>
+
+</html>

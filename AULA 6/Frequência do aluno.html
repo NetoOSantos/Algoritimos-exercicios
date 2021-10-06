@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequência do aluno</title>
+</head>
+
+<body>
+    <h1>Frequência do aluno</h1>
+
+    <h3>Nome:</h3>
+    <input id="nom_aluno" type="text" placeholder="Nota 1">
+    <h3>quantidade de aulas totais:</h3>
+    <input id="qtd_aulas" type="text" placeholder="Nota 2">
+    <h3>Qtd de faltas:</h3>
+    <input id="qtd_faltas" type="text" placeholder="Nota 2">
+    <p><button onclick="cal_freq()" style="background-color: chocolate;">Calcular Frequência</button></p>
+
+    <Div id="cal_freq_alu"></Div>
+
+</body>
+
+</html>
+
+<script>
+    function cal_freq() {
+        var presenca = qtd_aulas.value - qtd_faltas.value;
+        var porcentagem = presenca * 100 / qtd_aulas.value;
+        cal_freq_alu.innerHTML += `<h3> Olá, ${nom_aluno.value}! Sua frequência foi de ${porcentagem}% </h3>
+        <div style="background-color: coral; height: 20px; width: ${porcentagem}% ;"></div>`;
+    }
+</script>

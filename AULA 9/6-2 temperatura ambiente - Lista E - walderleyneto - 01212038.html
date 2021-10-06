@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura Ambiente</title>
+</head>
+
+<body>
+    <h1>Temperatura Ambiente</h1><br>
+    <input id="temp_amb" type="text" placeholder="temperatura ambiente"><br><br>
+
+    <button onclick="ver_clima()">Verificar Clima</button><br><br>
+
+    <div id="mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+    function ver_clima() {
+        if (temp_amb.value <= 10) {
+            mensagem.innerHTML = 'Apropriada p/ conservar alimento <br><img src="https://feiradoceasa.com.br/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/m/a/maca03_1_1.jpg" alt="" style="width: 100px;">';
+        } 
+        else {
+            mensagem.innerHTML = 'Inapropriada p/ conservar alimento <br><img src="https://thumbs.dreamstime.com/b/maçã-podre-17538654.jpg" alt="" style="width: 100px;">';
+        }
+    }
+</script>

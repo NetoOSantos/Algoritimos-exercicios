@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ki Sayajins</title>
+</head>
+
+<body>
+    <h1>ki Sayajins</h1>
+
+    <h3>ki base</h3>
+    <p><input id="ki_base" type="text" placeholder="ki base"></p>
+    <button onclick="SSJ_1()" style="background-color: rgb(237, 223, 100);">SSJ</button>
+    <button onclick="SSJ_2()" style="background-color: rgb(237, 200, 100);">SSJ2</button>
+    <button onclick="SSJ_3()" style="background-color: rgb(237, 178, 100);">SSJ3</button>
+
+    <div id="cal_ssj"></div>
+
+</body>
+
+</html>
+
+<script>
+    function SSJ_1() {
+        var ssj = ki_base.value * 50;
+        cal_ssj.innerHTML += `<h2> Após se transformar em SSJ1, o ki desse Sayajin passa a ser de ${ssj} </h2><br> 
+        <img src="SSJ1.png" alt="" style="height: 200px;">`;
+    }
+    function SSJ_2() {
+        var ssj2 = ki_base.value * 100;
+        cal_ssj.innerHTML += `<h2> Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${ssj2} </h2><br>
+        <img src="ssj2.jfif" alt="" style="height: 200px;">`;
+    }
+    function SSJ_3() {
+        var ssj3 = ki_base.value * 200;
+        cal_ssj.innerHTML += `<h2> Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${ssj3} </h2><br>
+        <img src="ssj3.png" alt="" style="height: 200px;">`;
+    }
+</script>

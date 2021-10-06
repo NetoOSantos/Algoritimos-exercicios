@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta no banco</title>
+</head>
+
+<body>
+    <H2>Saldo na conta do banco</H2>
+
+    <input id="saldo_conta" type="text" placeholder="Qual o saldo na sua conta">
+    <button onclick="verificar()">Verificar finanças</button> <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+       
+        if (saldo_conta.value == 0) {
+            resposta.innerHTML = ('Conta zerada');
+        }
+        if (saldo_conta.value < 0) {
+            resposta.innerHTML = ('<span style="color: red;">Está devendo!</span>');
+        }
+        if (saldo_conta.value > 0) {
+            resposta.innerHTML = ('<span style="color: blue;">Saldo positivo!</span>');
+        }
+
+    }
+
+</script>

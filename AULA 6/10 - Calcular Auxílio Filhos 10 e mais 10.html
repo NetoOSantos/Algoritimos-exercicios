@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Auxílio Filhos</title>
+</head>
+
+<body>
+    <h1>Calcular Auxílio Filhos</h1>
+
+    <h3>Quantidade de filhos com menos de 10 anos</h3>
+    <input id="qtd_filho_10anos" type="text" placeholder="filhos com menos de 10 anos">
+    <h3>Quantidade de filhos apartir de 10 anos</h3>
+    <input id="qtd_filho_apartir10anos" type="text" placeholder="filhos apartir de 10 anos">
+    <button onclick="cal_aux_filho()" style="background-color: cornflowerblue;">Calcular Auxílio Filhos</button>
+
+    <div id="cal_aux"></div>
+</body>
+
+</html>
+
+<script>
+    function cal_aux_filho() {
+        var aux_10anos = qtd_filho_10anos.value * 30;
+        var aux_apartir10anos = qtd_filho_apartir10anos.value * 20;
+        var aux_filhos = Number(aux_10anos) + Number(aux_apartir10anos);
+        cal_aux.innerHTML += `<h3> Você tem ${qtd_filho_10anos.value} filhos menores de 10 anos e ${qtd_filho_apartir10anos.value} filhos a partir de 10 anos, logo, seu "Auxílio Filhos" será de R$${aux_filhos} </h3>`
+    }
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fora de série</title>
+</head>
+
+<body>
+    <H2>fora de série</H2>
+
+    <input id="nota_1" type="text" placeholder="Nota 1"><br><br>
+    <input id="nota_2" type="text" placeholder="Nota 2"><br><br>
+    <input id="nota_3" type="text" placeholder="Nota 3"><br><br>
+    <button onclick="analisar()">Analisar desempenho</button> <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    var ax_tot_nota = 0;
+
+    function analisar() {
+        var ax_tot_nota = 0;
+        
+        ax_tot_nota = Number(nota_1.value) + Number(nota_2.value) + Number(nota_3.value);
+
+        resposta.innerHTML = `Sua média foi de ${ax_tot_nota.toFixed(2)}`;
+
+        if (ax_tot_nota.value > 9,4) {
+            resposta.innerHTML = `Sua média foi de ${ax_tot_nota.toFixed(2)} <br><br> Parabéns, você é fora de série!`;
+        }
+
+
+    }
+
+</script>

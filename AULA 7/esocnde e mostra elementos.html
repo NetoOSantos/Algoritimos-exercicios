@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esconde mostra</title>
+</head>
+
+<body>
+    <h3>Esconde e mostra elementos</h3>
+
+    <!--
+        display: none; torna um elemento INVISÍVEL
+        display: block; torna um elemento VISÍVEL
+    -->
+
+    Há segredos aqui! Cuidado! <br><br>
+
+    <button id="bt_mostrar" onclick="mostrar_segredos()">Ver Segredos</button>
+    <button id="bt_esconder" onclick="esconder_segredo()" style="display: none;">Esconder segredos</button>
+    <br><br>
+    <div id="div_segredo" style="display: none;">
+        Você é o senhor do que cala e escravo do fala!
+    </div>
+
+</body>
+
+</html>
+
+<script>
+function mostrar_segredos() {
+    div_segredo.style.display = 'block';
+    bt_esconder.style.display = 'block';
+    bt_mostrar.style.display = 'none';
+}
+function esconder_segredo() {
+    div_segredo.style.display = 'none';
+    bt_mostrar.style.display = 'none';
+    bt_esconder.style.display = 'block';
+}
+
+</script>

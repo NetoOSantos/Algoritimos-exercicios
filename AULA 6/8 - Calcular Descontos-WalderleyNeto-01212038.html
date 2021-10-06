@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Descontos</title>
+</head>
+
+<body>
+    <h1>Calcular Descontos</h1>
+
+    <h3>Salário</h3>
+    <input id="sal_trab" type="text" placeholder="Salario">
+    <button onclick="cal_desc()" style="background-color: cornflowerblue;">Calcular Descontos</button>
+
+    <div id="desc_trab"></div>
+</body>
+
+</html>
+
+<script>
+    function cal_desc() {
+        var INSS = sal_trab.value * 0.1;
+        var IR = sal_trab.value * 0.2;
+        var total_de_descontos = INSS + IR;
+        var sal_apos_desc = sal_trab.value - total_de_descontos;
+
+        desc_trab.innerHTML += `<h3> Seus descontos serão de: <br>
+    INSS: R$${INSS} <br>
+    IR: R$${IR} <br>
+    Total de descontos: R$${total_de_descontos} <br>
+    Seu salário, após os descontos será de: R$${sal_apos_desc} </h3> `
+    }
+
+</script>

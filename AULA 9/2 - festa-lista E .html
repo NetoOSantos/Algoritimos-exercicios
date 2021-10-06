@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festa</title>
+</head>
+
+<body>
+    <H2>Festa</H2>
+
+    <input id="sua_idade" type="text" placeholder="Qual é a sua idade">
+    <button onclick="festa()">Ir para festa</button> <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    function festa() {
+
+        if (sua_idade.value < 18) {
+            alert('Pedir permissão pro responsável');
+        }
+        if (sua_idade.value >= 15) {
+            alert('#PartiuFesta');
+        }
+        if (sua_idade.value > 18) {
+            alert('#PartiuFesta');
+        }
+        if (sua_idade.value < 15) {
+            alert('Sem chance! Vai estudar!');
+        }
+
+    }
+
+</script>

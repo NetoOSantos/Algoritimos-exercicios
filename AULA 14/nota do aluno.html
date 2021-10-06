@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota do aluno</title>
+</head>
+<body>
+    <h1>Nota do aluno</h1>
+    <br>
+    <button onclick="sortear()">Sortear nota para o aluno</button>
+    <br><br>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+
+function sortear() {
+    var random = Math.random() * 10;
+    random = random.toFixed(2);
+
+    resposta.innerHTML = `Sua nota é ${random}`;
+}
+
+</script>

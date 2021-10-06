@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero Cabalistico</title>
+</head>
+<body>
+    <h2>Numero Cabalistico</h2>
+    <br>
+    <button onclick="sortear()">Quero cabalístico</button>
+    <br><br>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+
+function sortear() {
+    var random = Math.random() * 14 + 1;
+    random = random.toFixed();
+
+    if (random == 3 || random == 4 || random == 7 || random == 10 || random == 12) {
+        resposta.innerHTML = `Eu S2 números cabalísticos! Numero: ${random}`;
+    }
+    else {
+        resposta.innerHTML = `Ah, me dá um número bom na próxima! Numero: ${random}`;
+    }
+}
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo</title>
+</head>
+
+<body>
+    <button style="margin-left: 48%;" onclick="jogo()">Iniciar Jogo</button>
+    <div id="div_imagem" style="display: none;">
+    </div> <br>
+    <div id="div_vida" style="width: 100%;display: none; height: 20px; background-color: purple;">
+    </div> <br>
+    <div id="div_golpes">
+    </div>
+
+</body>
+<script>
+    var barra_vida1 = Number(100);
+    var barra_vida2 = Number(100);
+    var golpes1 = Number(0);
+    var golpes2 = Number(0);
+
+    function jogo() {
+
+        div_imagem.style.display = 'block';
+        div_imagem.innerHTML = `<img id="fighter_1" onclick="golpes_1()" style="height: 500px" src="https://w.wallha.com/ws/13/6VDJx9R8.png"> <br>
+                                Vida: <div id="div_vida" style="width:${barra_vida1}%; height: 20px; background-color: purple;"></div> <br>
+                                <img id="fighter_2" onclick="golpes_2()" style="height: 500px" src="https://i.pinimg.com/originals/22/c6/91/22c691c01b4a6e419f0a3feb606820fd.png"> <br>
+                                Vida: <div id="div_vida" style="width:${barra_vida2}%; height: 20px; background-color: purple;"></div> <b>
+                                Golpes sofridos pelo lutador 1: ${golpes1} <br>
+                                Golpes sofridos pelo lutador 2: ${golpes2}`;
+    }
+
+    function golpes_1() {
+        golpes1++;
+        barra_vida1 = barra_vida1 - 5;
+        div_imagem.style.display = 'block';
+        div_imagem.innerHTML = `<img id="fighter_1" onclick="golpes_1()" style="height: 500px" src="https://w.wallha.com/ws/13/6VDJx9R8.png"> <br>
+                                Vida: <div id="div_vida" style="width:${barra_vida1}%; height: 20px; background-color: purple;"></div> <br>
+                                <img id="fighter_2" onclick="golpes_2()" style="height: 500px" src="https://i.pinimg.com/originals/22/c6/91/22c691c01b4a6e419f0a3feb606820fd.png"> <br>
+                                Vida: <div id="div_vida" style="width:${barra_vida2}%; height: 20px; background-color: purple;"></div> <b>
+                                Golpes sofridos pelo lutador 1: ${golpes1} <br>
+                                Golpes sofridos pelo lutador 2: ${golpes2}`;
+    }
+
+    function golpes_2() {
+        golpes2++;
+        barra_vida2 = barra_vida2 - 5;
+        div_imagem.style.display = 'block';
+        div_imagem.innerHTML = `<img id="fighter_1" onclick="golpes_1()" style="height: 500px" src="https://w.wallha.com/ws/13/6VDJx9R8.png"> <br>
+                                Vida: <div id="div_vida" style="width:${barra_vida1}%; height: 20px; background-color: purple;"></div> <br>
+                                <img id="fighter_2" onclick="golpes_2()" style="height: 500px" src="https://i.pinimg.com/originals/22/c6/91/22c691c01b4a6e419f0a3feb606820fd.png"> <br>
+                                Vida: <div id="div_vida" style="width:${barra_vida2}%; height: 20px; background-color: purple;"></div> <b>
+                                Golpes sofridos pelo lutador 1: ${golpes1} <br>
+                                Golpes sofridos pelo lutador 2: ${golpes2}`;
+    }
+
+
+</script>
+</html>

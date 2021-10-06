@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear time</title>
+</head>
+
+<body>
+    <h2>Sortear time</h2>
+    <br>
+
+    <button onclick="sortear()">Sortear Time</button>
+    <br>
+    <div id="resposta"></div>
+    <br>
+</body>
+
+</html>
+<script>
+
+    function sortear() {
+
+        var ax_random = Math.random() * 4 + 1;
+      
+        if (ax_random <= 2) {
+            resposta.innerHTML += `<img src="https://a.espncdn.com/i/teamlogos/soccer/500/874.png" alt="" style="height:150px ;"> <br>`;
+        }
+        else if (ax_random <= 3) {
+            resposta.innerHTML += `<img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2029.png" alt="" style="height:150px ;"><br>`;
+        }
+        else if (ax_random <= 4) {
+            resposta.innerHTML += `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/1200px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png" alt="" style="height:150px ;"><br>`;
+        }
+        else {
+            resposta.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1200px-Santos_logo.svg.png" alt="" style="height:150px ;">`;
+        }
+
+    }
+</script>

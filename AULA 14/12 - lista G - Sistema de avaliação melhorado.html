@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de avaliação de atendente</title>
+</head>
+
+<body>
+    <h2>Sistema de avaliação de atendente</h2>
+    <br>
+    <button onclick="avaliar()">Avaliar</button>
+    <br><br>
+    <div id="resposta"></div>
+    <img id="resposta_img" src="" alt="" style="height: 150px;">
+    <br><br>
+    <button onclick="equipe()">Equipe</button>
+    <br><br>
+    <div id="div_equipe"></div>
+</body>
+
+</html>
+
+<script>
+
+    var avaliacao_soma = 0;
+   
+    var random = 0;
+     
+
+    function avaliar() {
+
+        avaliacao_soma++;
+
+        random = Math.random() * 5;
+        random++;
+        random = random.toFixed(1);
+        
+
+        resposta.innerHTML = `Nota recebida: ${random}`;
+
+        if (random <= 0.5) {
+            resposta_img.src = `https://png.pngtree.com/png-vector/20210122/ourlarge/pngtree-sad-emoji-in-3d-png-image_2786388.jpg`;
+        }
+        else if (random <= 1.5) {
+            resposta_img.src = `https://assets.wprock.fr/emoji/joypixels/512/2639.png`;
+        }
+        else if (random <= 3.5) {
+            resposta_img.src = `https://images.emojiterra.com/google/android-11/512px/1f625.png`;
+        }
+        else if (random <= 4.5) {
+            resposta_img.src = `https://images.emojiterra.com/google/android-10/512px/1f60a.png`;
+        }
+        else if (random >= 4.5) {
+            resposta_img.src = `http://s2.glbimg.com/GFHUa5KeFPDTmwtAVjWl1A7oqTQ=/695x0/s.glbimg.com/po/tt2/f/original/2014/07/14/imagem0.jpg`;
+        }
+
+    }
+    function equipe() {
+        var ava_total = random / avaliacao_soma;
+        ava_total = ava_total.toFixed(1);
+
+        div_equipe.innerHTML = `Média geral:${ava_total}`;
+    }
+
+</script>

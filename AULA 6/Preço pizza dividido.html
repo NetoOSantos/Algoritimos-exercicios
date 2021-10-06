@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço pizza dividido</title>
+</head>
+
+<body>
+    <h1>Preço pizza dividido</h1>
+
+    <h3>Sabor da pizza:</h3>
+    <input id="sab_pizza" type="text" placeholder="Nota 1">
+    <h3>Preço da pizza:</h3>
+    <input id="val_pizza" type="text" placeholder="Nota 2">
+    <h3>Qtd de pessoas que vão comer:</h3>
+    <input id="qtd_pessoas" type="text" placeholder="Nota 2">
+    <p><button onclick="cal_vl_amg()" style="background-color: chocolate;">Ver valor por amigo</button></p>
+
+    <Div id="cal_piz"></Div>
+</body>
+
+</html>
+
+<script>
+    function cal_vl_amg() {
+        cal_piz.innerHTML += `<h3> Cada amigo vai colaborar com <u>R$ ${val_pizza.value / qtd_pessoas.value}</u> para a pizza de ${sab_pizza.value} </h3>`;
+    }
+
+</script>

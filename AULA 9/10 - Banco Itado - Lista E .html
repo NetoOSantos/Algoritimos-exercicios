@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Itado</title>
+</head>
+
+<body>
+    <H2>Banco Itado</H2>
+
+    <input id="saldo_conta" type="text" placeholder="saldo da conta"> <br><br>
+    <input id="valor_debito" type="text" placeholder="valor do débito"><br><br>
+    <button onclick="validar()">Analisar conta</button><br><br> 
+    <span id="resposta"></span>
+
+</body>
+
+</html>
+
+<script>
+    function validar() {
+
+        var saldo_atual = saldo_conta.value - valor_debito.value ;
+
+        resposta.innerHTML = `o saldo atual da conta corrente é R$${saldo_atual}`;
+
+        if (saldo_atual <= 0) {
+            resposta.innerHTML = `<span style="color: red;"><b>o saldo atual da conta corrente é R$${saldo_atual}</b></span>`;
+        }
+    }
+</script>

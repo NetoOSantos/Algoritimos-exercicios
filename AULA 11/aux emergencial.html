@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxilio emergencial</title>
+</head>
+
+<body>
+    <h2>Auxilio emergêncial</h2>
+    <br><br>
+    <input type="" id="renda_usuario" placeholder="Renda do usuario">
+    <br><br>
+    <input type="" id="renda_familiar" placeholder="Renda total familiar">
+    <br><br>
+    <button onclick="veriricar()">Verificar ajuda</button>
+    <br><br>
+    <div id="resposta"></div>
+</body>
+</html>
+
+<script>
+
+function veriricar() {
+    if (renda_usuario.value <= 1050 && renda_familiar.value <= 2100) {
+        resposta.innerHTML = "Você terá direito!";
+    }
+    else {
+        resposta.innerHTML = "Você NÃO terá direito!";
+    }
+}
+
+</script>

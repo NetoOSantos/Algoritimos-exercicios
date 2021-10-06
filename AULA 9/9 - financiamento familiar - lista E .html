@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>financiamento familiar</title>
+</head>
+
+<body>
+    <H2>financiamento familiar</H2>
+
+    <h3>Valor da renda familiar</h3>
+    <input id="valor_renda" type="text" placeholder="Valor da renda familiar">
+    <h3>Valor da prestação</h3>
+    <input id="valor_prestação" type="text" placeholder="Valor da prestação">
+    <button onclick="validar()"></button> <br><br>
+    <span id="resposta"></span>
+
+</body>
+
+</html>
+
+<script>
+    function validar() {
+
+        var financiamento = valor_prestação.value / valor_renda.value * 100;
+
+        resposta.innerHTML = `a prestação corresponde a ${financiamento}% da renda familiar<br><br>`;
+
+        if (financiamento > 30) {
+            resposta.innerHTML += `<span style="color: red;"><b>Será necessário complementar a renda familiar</b></span>`;
+        }
+
+
+
+    }
+
+</script>

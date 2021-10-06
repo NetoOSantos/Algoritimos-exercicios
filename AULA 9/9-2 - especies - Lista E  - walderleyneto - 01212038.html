@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especies</title>
+</head>
+
+<body>
+    <p>
+    <h1>Escolha uma espécie</h1>
+    </p>
+
+    <select id="lista_especies" onchange="valores_especies()">
+        <option value="limpar_especie">- Escolha uma espécie -</option>
+        <option value="oviparos">Ovíparos</option>
+        <option value="mamiferos">Mamíferos</option>
+    </select><br>
+
+    <select id="lista_oviparos" onchange="valores_oviparos()" style="display: none;">
+        <option value="limpar_oviparos">- Escolha um ovípado -</option>
+        <option value="https://opresenterural.com.br/wp-content/uploads/2021/06/VACCINAR-FOTO-GALINHA-POEDEIRA-VACCINAR-DIVULGAÇÃO-2021-e1623170813779.jpg">Galinha</option>
+        <option value="peixe">Peixe</option>
+        <option value="tartaruga">Tartaruga</option>
+    </select><br>
+
+    <select id="lista_mamiferos" onchange="valores_mamiferos()" style="display: none;">
+        <option value="limpar_mamiferos">- Escolha um mamífero -</option>
+        <option value="elefante">Elefante</option>
+        <option value="porco">Porco</option>
+        <option value="coelho">Coelho</option>
+    </select><br>
+
+    <div id="div_oviparos" style="display: none;">
+        <span id="img_oviparos"></span>
+        Valor de compra do animal <br>
+        <input id="ipt_valor_oviparo" type="text">
+        <button onclick="calcula_oviparo()">Calcula imposto</button>
+        <span id="imposto_oviparo"></span>
+    </div><br>
+
+    <div id="div_mamiferos" style="display: none;">
+        <span id="img_mamiferos"></span>
+        Valor de compra do animal <br>
+        <input id="ipt_valor_mamiferos" type="text">
+        <button onclick="calcula_mamiferos()">Calcula imposto</button>
+        <span id="imposto_mamiferos"></span>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function valores_especies() {
+        if (lista_especies.value == "limpar_especie") {
+            lista_oviparos.style.display = 'none'
+            lista_mamiferos.style.display = 'none'
+            div_oviparos.style.display = 'none'
+            ipt_valor_oviparo.value = ``
+            imposto_oviparo.innerHTML = ``
+            div_mamiferos.style.display = 'none'
+            ipt_valor_mamiferos.value = ``
+            imposto_mamiferos.innerHTML = ``;
+        }
+
+        if (lista_especies.value == "oviparos") {
+            lista_oviparos.style.display = 'block';
+        }
+
+        if (lista_especies.value == "mamiferos") {
+            lista_mamiferos.style.display = 'block';
+        }
+    }
+
+    function valores_oviparos() {
+        if (lista_oviparos.value == "limpar_oviparos") {
+            div_oviparos.style.display = 'none'
+            ipt_valor_oviparo.value = ``
+            imposto_oviparo.innerHTML = ``;
+
+        }
+        if (lista_oviparos.value == "galinha") {
+            div_oviparos.style.display = 'block'
+            img_oviparos.innerHTML = `<br><img src="https://opresenterural.com.br/wp-content/uploads/2021/06/VACCINAR-FOTO-GALINHA-POEDEIRA-VACCINAR-DIVULGAÇÃO-2021-e1623170813779.jpg" width="200px"><br>`;
+        }
+        if (lista_oviparos.value == "peixe") {
+            div_oviparos.style.display = 'block'
+            img_oviparos.innerHTML = `<br><img src="https://s2.static.brasilescola.uol.com.br/be/2020/12/peixe.jpg" width="200px"><br>`;
+        }
+        if (lista_oviparos.value == "tartaruga") {
+            div_oviparos.style.display = 'block'
+            img_oviparos.innerHTML = `<br><img src="https://www.dicaspetz.com.br/wp-content/uploads/2020/05/como-criar-tartaruga.jpg" width="200px"><br>`;
+        }
+    }
+
+    function calcula_oviparo() {
+        var ax_imposto_oviparo = ipt_valor_oviparo.value * 0.05;
+        imposto_oviparo.innerHTML = `<br>O imposto será de R$ ${ax_imposto_oviparo}`
+    }
+
+    function valores_mamiferos() {
+        if (lista_mamiferos.value == "limpar_mamiferos") {
+            div_mamiferos.style.display = 'none'
+            ipt_valor_mamiferos.value = ``
+            imposto_mamiferos.innerHTML = ``;
+
+        }
+        if (lista_mamiferos.value == "elefante") {
+            div_mamiferos.style.display = 'block'
+            img_mamiferos.innerHTML = `<br><img src="https://www.stoodi.com.br/wp-content/uploads/2019/02/elefante.jpg" width="200px"><br>`;
+        }
+        if (lista_mamiferos.value == "porco") {
+            div_mamiferos.style.display = 'block'
+            img_mamiferos.innerHTML = `<br><img src="https://img.r7.com/images/porco-desaparicao-corpo-24022021174926376?dimensions=771x420&no_crop=true" width="200px"><br>`;
+        }
+        if (lista_mamiferos.value == "coelho") {
+            div_mamiferos.style.display = 'block'
+            img_mamiferos.innerHTML = `<br><img src="https://www.hypeness.com.br/1/2019/07/Coelho_Careca_4.jpg" width="200px"><br>`;
+        }
+    }
+
+    function calcula_mamiferos() {
+        var ax_imposto_mamiferos = ipt_valor_mamiferos.value * 0.10;
+        imposto_mamiferos.innerHTML = `<br>O imposto será de R$ ${ax_imposto_mamiferos}`
+    }
+
+
+</script>

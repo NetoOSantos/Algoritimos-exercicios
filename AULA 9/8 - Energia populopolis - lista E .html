@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energia em populopolis</title>
+</head>
+
+<body>
+    <H2>Energia em Populopolis</H2>
+
+    <input id="qtde_kwh" type="text" placeholder="quantidade de kWh consumida no mês">
+    <button onclick="validar()">calcular conta de luz</button> <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        var ax_tot_conta = qtde_kwh.value * 0.85;
+
+        if (ax_tot_conta < 100) {
+            ax_tot_conta = ax_tot_conta * 0.9;
+        }
+        
+        alert(`Valor da sua conta é R$${ax_tot_conta}`);
+    }
+
+</script>

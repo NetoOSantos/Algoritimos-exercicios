@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Passagem onibus</title>
+</head>
+
+<body>
+    <h1>Calcular Passagem onibus</h1>
+
+    <h3>Passagem do onibus:</h3>
+    <input id="pass_oni" type="text" placeholder="Nota 1">
+    <h3>QTD viagens por mês:</h3>
+    <input id="qtd_via" type="text" placeholder="Nota 2">
+    <p><button onclick="cal_vt_oni()" style="background-color: chocolate;">Calcular VT</button></p>
+
+    <Div id="cal_vt"></Div>
+</body>
+
+</html>
+
+<script>
+    function cal_vt_oni() {
+        cal_vt.innerHTML += `<h3>Você vai gastar <u>R$ ${pass_oni.value * qtd_via.value}</u> por mês com ônibus<h3>`;
+    }
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momento do dia</title>
+</head>
+<body>
+    <h2>Sortear Momento do Dia</h2>
+    <br>
+    <Button onclick="sortear()">Sortear</Button>
+    <br><br>
+    <div id="resposta"></div>
+</body>
+</html>
+
+<script>
+
+function sortear() {
+    var random = Math.random() * 23;
+    random = random.toFixed();
+
+    if (random <= 11) {
+        resposta.innerHTML = `Bom dia, flor do dia, são ${random}h!`;
+    }
+    else if (random <= 17) {
+        resposta.innerHTML = `Boa tarde, já vai tarde! São ${random}h!`;
+    }
+    else if (random <= 23) {
+        resposta.innerHTML = `Boa noite, durma bem! São ${random}h!`;
+    }
+}
+
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de refrigerante</title>
+</head>
+
+<body>
+    <H2>Consumo de refrigerante</H2>
+
+    <input id="qtde_refris" type="text" placeholder="Quantidade de refripor dia">
+    <button onclick="validar()">Quantos refris?</button> <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        var ax_tot_refris = 0;
+
+        ax_tot_refris = qtde_refris.value * 365;
+        resposta.innerHTML = `A quantidade de refris que você bebeu é de ${ax_tot_refris}`;
+
+        if (ax_tot_refris > 500) {
+            resposta.innerHTML = `A quantidade de refris que você bebeu é de ${ax_tot_refris} <br><br> Cuidado com a diabetes!`;
+        }
+    }
+
+</script>
